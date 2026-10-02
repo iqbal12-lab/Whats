@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bal & Dai - Our Story Album (Dai)</title>
+    <title>Bal & Dai - Our Story Album (Bal)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
         <div class="flex items-center gap-3">
             <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
             <span class="font-semibold text-sm tracking-wide text-zinc-300">
-                Akses masuk sebagai: <strong class="text-amber-400 font-bold">DAI</strong>
+                Akses masuk sebagai: <strong class="text-amber-400 font-bold">BAL</strong>
             </span>
         </div>
     </header>
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="mt-2 mb-4">
-                    <h1 class="font-serif-vintage text-2xl font-bold text-amber-950 tracking-wide">Dai & Bal Album</h1>
+                    <h1 class="font-serif-vintage text-2xl font-bold text-amber-950 tracking-wide">Bal & Dai Album</h1>
                     <p class="font-handwriting text-lg text-amber-800 -mt-1">Kenangan & Cerita Kita 💕</p>
                 </div>
 
@@ -81,11 +81,11 @@
                             <div class="w-16 h-16 rounded-full bg-amber-500/20 border-2 border-amber-400 flex items-center justify-center mb-3 calling-animation">
                                 <i id="call-icon-status" class="fa-solid fa-phone-volume text-amber-400 text-2xl"></i>
                             </div>
-                            <h4 id="call-status-title" class="font-bold text-lg">Memanggil Bal...</h4>
+                            <h4 id="call-status-title" class="font-bold text-lg">Memanggil Dai...</h4>
                             <p id="call-status-subtitle" class="text-xs text-amber-200 mt-1">Menghubungkan suara & video</p>
                         </div>
                     </div>
-                    <p class="font-handwriting text-center text-xl text-stone-700 mt-3 font-bold">Dai & Bal ✨</p>
+                    <p class="font-handwriting text-center text-xl text-stone-700 mt-3 font-bold">Bal & Dai ✨</p>
                 </div>
 
                 <div class="mt-4 bg-amber-100/60 p-3 rounded-xl border border-amber-200/80 flex items-center justify-around gap-2 shadow-inner">
@@ -109,7 +109,7 @@
 
                 <div class="mb-3">
                     <h2 class="font-serif-vintage text-xl font-bold text-amber-950">Obrolan Langsung</h2>
-                    <p class="text-xs text-amber-800">Pesan ke Bal</p>
+                    <p class="text-xs text-amber-800">Pesan ke Dai</p>
                 </div>
 
                 <div id="chat-box" class="custom-scrollbar flex-1 overflow-y-auto max-h-[340px] my-2 pr-2 space-y-3 flex flex-col">
@@ -121,7 +121,7 @@
                 </div>
 
                 <form onsubmit="sendMessage(event)" class="mt-3 flex items-center gap-2 bg-white/80 p-2 rounded-xl border border-amber-300 shadow-sm">
-                    <input type="text" id="chat-input" placeholder="Tulis pesan untuk Bal..." class="flex-1 bg-transparent px-3 py-2 text-sm text-amber-950 placeholder-amber-700/50 focus:outline-none font-medium">
+                    <input type="text" id="chat-input" placeholder="Tulis pesan untuk Dai..." class="flex-1 bg-transparent px-3 py-2 text-sm text-amber-950 placeholder-amber-700/50 focus:outline-none font-medium">
                     <button type="submit" class="bg-amber-800 hover:bg-amber-900 active:scale-95 text-white w-10 h-10 rounded-lg flex items-center justify-center transition shadow">
                         <i class="fa-solid fa-paper-plane text-xs"></i>
                     </button>
@@ -136,7 +136,7 @@
             <div class="w-20 h-20 rounded-full bg-amber-200 border-4 border-amber-400 mx-auto flex items-center justify-center my-4 calling-animation">
                 <i class="fa-solid fa-phone-volume text-amber-800 text-3xl"></i>
             </div>
-            <h3 class="font-serif-vintage text-2xl font-bold text-amber-950">Bal Memanggil...</h3>
+            <h3 class="font-serif-vintage text-2xl font-bold text-amber-950">Dai Memanggil...</h3>
             <p class="text-xs text-amber-800 mt-1 mb-6">Panggilan masuk</p>
             <div class="flex items-center justify-center gap-4">
                 <button onclick="rejectCall()" class="flex-1 bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-4 rounded-xl transition shadow-lg active:scale-95 flex items-center justify-center gap-2"><i class="fa-solid fa-xmark"></i> Tolak</button>
@@ -146,9 +146,9 @@
     </div>
 
     <script>
-        const myPeerId = "bal-dai-album-app-dai-id-2026";
-        const targetPeerId = "bal-dai-album-app-bal-id-2026";
-        const senderName = "Dai";
+        const myPeerId = "bal-dai-album-app-bal-id-2026";
+        const targetPeerId = "bal-dai-album-app-dai-id-2026";
+        const senderName = "Bal";
         
         let peer = null; let activeCall = null; let activeDataConn = null;
         let localStream = null; let incomingCallData = null;
@@ -168,7 +168,7 @@
         function connectDataChannel() { activeDataConn = peer.connect(targetPeerId); setupDataConnListeners(); }
         function setupDataConnListeners() {
             if (!activeDataConn) return;
-            activeDataConn.on('data', (data) => { if (data.type === 'chat') appendMessage('Bal', data.text, 'remote'); });
+            activeDataConn.on('data', (data) => { if (data.type === 'chat') appendMessage('Dai', data.text, 'remote'); });
         }
 
         function playRingtone() {
@@ -196,7 +196,7 @@
         async function startCall(type) {
             stopRingtone(); playRingtone();
             const isVideo = (type === 'video');
-            showCallOverlay("Memanggil Bal...", "Menunggu jawaban...");
+            showCallOverlay("Memanggil Dai...", "Menunggu jawaban...");
             try {
                 localStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: isVideo });
                 showLocalStream(localStream, isVideo);
@@ -249,4 +249,27 @@
             document.getElementById('call-status-overlay').classList.remove('hidden'); document.getElementById('call-status-overlay').classList.add('flex');
         }
         function hideCallOverlay() {
-            document.getElementById('call-status-overlay').classList.add('hidden'); document.getElementById('call-
+            document.getElementById('call-status-overlay').classList.add('hidden'); document.getElementById('call-status-overlay').classList.remove('flex');
+        }
+
+        function sendMessage(e) {
+            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim();
+            if (!text) return;
+            appendMessage(senderName, text, 'self');
+            if (activeDataConn && activeDataConn.open) { activeDataConn.send({ type: 'chat', text: text }); } 
+            else { connectDataChannel(); setTimeout(() => { if (activeDataConn && activeDataConn.open) activeDataConn.send({ type: 'chat', text: text }); }, 500); }
+            input.value = '';
+        }
+
+        function appendMessage(sender, text, type) {
+            const chatBox = document.getElementById('chat-box'); const msgDiv = document.createElement('div');
+            const isSelf = type === 'self';
+            msgDiv.className = `flex flex-col ${isSelf ? 'items-end' : 'items-start'} my-1`;
+            msgDiv.innerHTML = `<span class="text-[10px] font-bold text-amber-900/60 px-1 mb-0.5">${sender}</span><div class="${isSelf ? 'bg-amber-800 text-amber-50 rounded-br-none' : 'bg-white text-amber-950 rounded-bl-none'} px-3 py-2 rounded-2xl shadow-sm border border-amber-200/80 max-w-[85%] text-sm font-medium">${text}</div>`;
+            chatBox.appendChild(msgDiv); chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        window.addEventListener('DOMContentLoaded', initPeer);
+    </script>
+</body>
+</html>
